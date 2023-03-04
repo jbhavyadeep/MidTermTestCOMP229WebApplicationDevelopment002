@@ -41,10 +41,10 @@ router.post('/add', (req, res, next) => {
      * ADD CODE HERE *
      *****************/
     let newBook = book({
-    Title : req.body.Title,
-    Price : req.body.Price,
-    Author : req.body.Author,
-    Genre : req.body.Genre
+    Title : req.body.title,
+    Price : req.body.price,
+    Author : req.body.author,
+    Genre : req.body.genre
      
   });
  
@@ -88,12 +88,14 @@ router.post('/:id', (req, res, next) => {
      * ADD CODE HERE *
      *****************/
     let id = req.params.id;
-    let updatedbook = {};
-    book.Title = req.body.Title;
-    book.Price = req.body.Price;
-    book.Author = req.body.Author;
-    book.Genre = req.body.Genre;
-  
+   let updatedbook = book({
+      _id: id,
+      Title : req.body.title,
+      Price : req.body.price,
+      Author : req.body.author,
+      Genre : req.body.genre
+       
+    });
     book.update({ _id: id }, updatedbook, (err) => {
       if (err) {
           console.log(err);
