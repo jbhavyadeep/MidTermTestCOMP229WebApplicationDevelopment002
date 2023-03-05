@@ -5,7 +5,6 @@
  * Student ID: 301234500
  * Web App name: Favorite Book List
 */
-
 -->
 <% include ../partials/header.ejs %>
 
@@ -14,9 +13,7 @@
       <div class="row">
         <div class="col-md-offset-1 col-md-10">
           <h3>Favourite Books List </h3>
-          <!-- ------------------------ -->
-          <!-- FIX THE ADD BUTTON BELOW -->
-          <!-- ------------------------ -->
+        
           <a href="/books/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add a book</a>
           <br>
           <div class="table-responsive">
@@ -41,17 +38,13 @@
                   <td class="text-center"><%=bookList[count].Genre%></td>
 
                   <td class="text-center">
-                    <!-- ------------------------ -->
-                    <!-- ADD the EDIT BUTTON HERE -->
-                    <!-- ------------------------ -->
+                  
                     <a href="/books/<%=bookList[count]._id%>" class="btn" style="background-color: darkcyan; color: white;"><i class="fas fa-pencil-alt"></i>Edit</a>
 
                   </td>
 
                   <td class="text-center">
-                    <!-- ------------------------ -->
-                    <!-- ADD the DELETE BUTTON HERE -->
-                    <!-- ------------------------ -->
+                   
                   <a href="/books/delete/<%= bookList[count]._id%>" class="btn" style="background-color: lightcoral; color: white;"><i class="fas fa-trash-alt"></i>Delete</a>
 
                   </td>
